@@ -62,27 +62,24 @@
       max-width: 700px;
     }
     
-    /* Contenedor para los gráficos: se muestran lado a lado */
+    /* Contenedor para los gráficos: se muestran lado a lado y centrados */
     .graphs-container {
       display: flex;
+      justify-content: center;
       gap: 20px;
-      margin-bottom: 40px;
     }
-    .graph {
-      flex: 1;
-    }
-    .graph iframe {
-      width: 100%;
+    .graphs-container iframe {
       border: 2px solid var(--primary2);
       box-shadow: 0 2px 4px var(--secondary2);
     }
     
-    /* Footer */
+    /* Footer: 15px más cerca de los gráficos y en cursiva */
     footer {
       text-align: center;
       font-size: 0.9em;
-      padding: 10px;
+      margin-top: 15px;
       color: var(--secondary2);
+      font-style: italic;
     }
   </style>
 </head>
@@ -99,22 +96,18 @@
         src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Tabla2&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
       </iframe>
     </div>
-    <!-- Gráficos dispuestos uno al lado del otro -->
+    <!-- Gráficos dispuestos lado a lado y centrados -->
     <div class="graphs-container">
-      <div class="graph">
-        <iframe height="223" frameborder="0" scrolling="no" 
-          src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
-        </iframe>
-      </div>
-      <div class="graph">
-        <iframe height="227" frameborder="0" scrolling="no" 
-          src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
-        </iframe>
-      </div>
+      <iframe width="348" height="223" frameborder="0" scrolling="no" 
+        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+      </iframe>
+      <iframe width="357" height="227" frameborder="0" scrolling="no" 
+        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+      </iframe>
     </div>
   </div>
   <footer>
-    prototipo creado con fines ilustrativos
+    Prototipo creado con fines ilustrativos
   </footer>
 </body>
 </html>
