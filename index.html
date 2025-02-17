@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Excel desde SharePoint - Solapa Resumen</title>
+  <!-- Incluimos SheetJS desde CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    /* Estilos para la tabla */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid #aaa;
+    }
+    th, td {
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Datos de la solapa "Resumen" del Excel</h1>
+  <div id="excelData">Cargando datos...</div>
+
+  <script>
+    // URL del archivo Excel en SharePoint
+    const url = 'https://hinscba-my.sharepoint.com/:x:/g/personal/jslythe_hins_com_ar/EXRl0_s4-pJLh02abx-MOTQBDorWbPny0azzkZ7SRudvbA?e=zl2v6G';
+
+    fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('No se pudo cargar el archivo Excel: ' + response.statusText);
+        }
+        return response.arrayBuffer();
+      })
+      .then(data => {
+        // Leemos el archivo Excel con SheetJS
+        const workbook = XLSX.read(data, { type: 'array' });
+        // Buscamos la hoja "Resumen" o usamos la primera si no existe
+        const sheetName = workbook.SheetNames.includes("Resumen")
+          ? "Resumen"
+          : workbook.SheetNames[0];
+        const worksheet = workbook.Sheets[sheetName];
+        // Convertimos la hoja a una tabla HTML
+        const htmlString = XLSX.utils.sheet_to_html(worksheet);
+        // Insertamos la tabla en el contenedor
+        document.getElementById('excelData').innerHTML = htmlString;
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('excelData').innerHTML = 'Error al cargar los datos.';
+      });
+  </script>
+</body>
+</html>
