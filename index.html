@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Items Incrustados - HINS</title>
+  <title>Resumen tableros - Registro de horas</title>
   <style>
     /* Variables de colores */
     :root {
@@ -44,14 +44,24 @@
       padding: 20px;
     }
     
-    /* Organización de los iframes */
-    .iframe-container {
+    /* Contenedor para la tabla (cuadro) */
+    .table-container {
+      text-align: left; /* Alinea el cuadro a la izquierda */
+      margin-bottom: 40px;
+    }
+    .table-container iframe {
+      border: 2px solid var(--primary2);
+      box-shadow: 0 2px 4px var(--secondary2);
+    }
+    
+    /* Contenedor para los gráficos */
+    .graphs-container {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
-    .iframe-container iframe {
+    .graphs-container iframe {
       border: 2px solid var(--primary2);
       box-shadow: 0 2px 4px var(--secondary2);
     }
@@ -59,18 +69,28 @@
 </head>
 <body>
   <header>
-    <!-- Asegúrate de que el archivo "HINS logo color.png" esté en la raíz del repositorio -->
+    <!-- Asegúrate de que "HINS logo color.png" esté en la raíz del repositorio -->
     <img src="HINS logo color.png" alt="Logo HINS">
-    <h1>Items Incrustados de SharePoint</h1>
+    <h1>Resumen tableros - Registro de horas</h1>
   </header>
   <div class="container">
-    <div class="iframe-container">
-      <iframe width="700" height="442" frameborder="0" scrolling="no" src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Tabla2&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+    <!-- Contenedor para el cuadro (tabla) -->
+    <div class="table-container">
+      <iframe width="700" height="442" frameborder="0" scrolling="no" 
+        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Tabla2&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+      </iframe>
+    </div>
+    <!-- Contenedor para los gráficos -->
+    <div class="graphs-container">
+      <iframe width="500" height="400" frameborder="0" scrolling="no" 
+        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+      </iframe>
 
-      <iframe width="348" height="223" frameborder="0" scrolling="no" src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
-
-      <iframe width="357" height="227" frameborder="0" scrolling="no" src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+      <iframe width="500" height="400" frameborder="0" scrolling="no" 
+        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+      </iframe>
     </div>
   </div>
 </body>
 </html>
+
