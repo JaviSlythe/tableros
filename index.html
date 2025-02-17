@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Resumen tableros - Registro de horas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     /* Variables de colores */
     :root {
@@ -20,6 +21,7 @@
       font-family: Arial, sans-serif;
       background-color: var(--primary3);
       color: var(--secondary3);
+      overflow-x: hidden; /* Evita scroll horizontal */
     }
     
     /* Cabecera con logo y título */
@@ -28,9 +30,10 @@
       padding: 20px;
       display: flex;
       align-items: center;
+      justify-content: center;
     }
     header img {
-      height: 50px; /* Ajusta según necesites */
+      height: 50px;
       margin-right: 20px;
     }
     header h1 {
@@ -39,31 +42,43 @@
       margin: 0;
     }
     
-    /* Contenedor principal */
+    /* Contenedor principal centrado */
     .container {
+      max-width: 720px;
+      margin: 0 auto;
       padding: 20px;
     }
     
-    /* Contenedor para la tabla (cuadro) */
+    /* Contenedor para el cuadro (tabla) alineado a la izquierda */
     .table-container {
-      text-align: left; /* Alinea el cuadro a la izquierda */
+      text-align: left;
       margin-bottom: 40px;
     }
     .table-container iframe {
       border: 2px solid var(--primary2);
       box-shadow: 0 2px 4px var(--secondary2);
+      display: block;
     }
     
-    /* Contenedor para los gráficos */
+    /* Contenedor para los gráficos con dimensiones originales */
     .graphs-container {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
       gap: 20px;
-      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
     }
     .graphs-container iframe {
       border: 2px solid var(--primary2);
       box-shadow: 0 2px 4px var(--secondary2);
+    }
+    
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      padding: 10px;
+      color: var(--secondary2);
     }
   </style>
 </head>
@@ -74,23 +89,26 @@
     <h1>Resumen tableros - Registro de horas</h1>
   </header>
   <div class="container">
-    <!-- Contenedor para el cuadro (tabla) -->
+    <!-- Cuadro (tabla) alineado a la izquierda -->
     <div class="table-container">
       <iframe width="700" height="442" frameborder="0" scrolling="no" 
         src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Tabla2&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
       </iframe>
     </div>
-    <!-- Contenedor para los gráficos -->
+    <!-- Gráficos con dimensiones originales -->
     <div class="graphs-container">
-      <iframe width="500" height="400" frameborder="0" scrolling="no" 
+      <iframe width="348" height="223" frameborder="0" scrolling="no" 
         src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
       </iframe>
-
-      <iframe width="500" height="400" frameborder="0" scrolling="no" 
+      <iframe width="357" height="227" frameborder="0" scrolling="no" 
         src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
       </iframe>
     </div>
   </div>
+  <footer>
+    prototipo creado con fines ilustrativos
+  </footer>
 </body>
 </html>
+
 
