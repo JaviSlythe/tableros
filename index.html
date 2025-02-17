@@ -2,67 +2,38 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Excel desde SharePoint - Solapa Resumen</title>
-  <!-- Incluimos SheetJS desde CDN -->
-  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+  <title>Incrustación de Items de SharePoint</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
     }
     h1 {
-      color: #333;
+      margin-bottom: 20px;
     }
-    /* Estilos para la tabla */
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin-top: 20px;
+    /* Opcional: estilo para organizar los iframes */
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    table, th, td {
-      border: 1px solid #aaa;
-    }
-    th, td {
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f0f0f0;
+    .item {
+      /* Puedes agregar estilos adicionales para cada iframe si lo deseas */
     }
   </style>
 </head>
 <body>
-  <h1>Datos de la solapa "Resumen" del Excel</h1>
-  <div id="excelData">Cargando datos...</div>
-
-  <script>
-    // URL del archivo Excel en SharePoint
-    const url = 'https://hinscba-my.sharepoint.com/:x:/g/personal/jslythe_hins_com_ar/EXRl0_s4-pJLh02abx-MOTQBDorWbPny0azzkZ7SRudvbA?e=zl2v6G';
-
-    fetch(url)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('No se pudo cargar el archivo Excel: ' + response.statusText);
-        }
-        return response.arrayBuffer();
-      })
-      .then(data => {
-        // Leemos el archivo Excel con SheetJS
-        const workbook = XLSX.read(data, { type: 'array' });
-        // Buscamos la hoja "Resumen" o usamos la primera si no existe
-        const sheetName = workbook.SheetNames.includes("Resumen")
-          ? "Resumen"
-          : workbook.SheetNames[0];
-        const worksheet = workbook.Sheets[sheetName];
-        // Convertimos la hoja a una tabla HTML
-        const htmlString = XLSX.utils.sheet_to_html(worksheet);
-        // Insertamos la tabla en el contenedor
-        document.getElementById('excelData').innerHTML = htmlString;
-      })
-      .catch(err => {
-        console.error(err);
-        document.getElementById('excelData').innerHTML = 'Error al cargar los datos.';
-      });
-  </script>
+  <h1>Items Incrustados</h1>
+  <div class="container">
+    <div class="item">
+      <iframe width="700" height="442" frameborder="0" scrolling="no" src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Tabla2&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+    </div>
+    <div class="item">
+      <iframe width="348" height="223" frameborder="0" scrolling="no" src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+    </div>
+    <div class="item">
+      <iframe width="357" height="227" frameborder="0" scrolling="no" src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True"></iframe>
+    </div>
+  </div>
 </body>
 </html>
