@@ -49,7 +49,7 @@
       padding: 20px;
     }
     
-    /* Contenedor para el cuadro (tabla) alineado a la izquierda */
+    /* Contenedor para la tabla (cuadro) alineado a la izquierda */
     .table-container {
       text-align: left;
       margin-bottom: 40px;
@@ -58,17 +58,21 @@
       border: 2px solid var(--primary2);
       box-shadow: 0 2px 4px var(--secondary2);
       display: block;
+      width: 100%;
+      max-width: 700px;
     }
     
-    /* Contenedor para los gráficos con dimensiones originales */
+    /* Contenedor para los gráficos: se muestran lado a lado */
     .graphs-container {
       display: flex;
-      justify-content: space-between;
       gap: 20px;
       margin-bottom: 40px;
-      flex-wrap: wrap;
     }
-    .graphs-container iframe {
+    .graph {
+      flex: 1;
+    }
+    .graph iframe {
+      width: 100%;
       border: 2px solid var(--primary2);
       box-shadow: 0 2px 4px var(--secondary2);
     }
@@ -95,14 +99,18 @@
         src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Tabla2&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
       </iframe>
     </div>
-    <!-- Gráficos con dimensiones originales -->
+    <!-- Gráficos dispuestos uno al lado del otro -->
     <div class="graphs-container">
-      <iframe width="348" height="223" frameborder="0" scrolling="no" 
-        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
-      </iframe>
-      <iframe width="357" height="227" frameborder="0" scrolling="no" 
-        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
-      </iframe>
+      <div class="graph">
+        <iframe height="223" frameborder="0" scrolling="no" 
+          src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+        </iframe>
+      </div>
+      <div class="graph">
+        <iframe height="227" frameborder="0" scrolling="no" 
+          src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%202&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+        </iframe>
+      </div>
     </div>
   </div>
   <footer>
@@ -110,5 +118,4 @@
   </footer>
 </body>
 </html>
-
 
