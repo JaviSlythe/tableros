@@ -67,8 +67,20 @@
       display: flex;
       justify-content: center;
       gap: 20px;
+      margin-bottom: 40px;
     }
     .graphs-container iframe {
+      border: 2px solid var(--primary2);
+      box-shadow: 0 2px 4px var(--secondary2);
+    }
+    
+    /* Contenedor para el nuevo iframe adicional */
+    .additional-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    .additional-container iframe {
       border: 2px solid var(--primary2);
       box-shadow: 0 2px 4px var(--secondary2);
     }
@@ -105,9 +117,16 @@
         src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&Item=Gr%C3%A1fico%201&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
       </iframe>
     </div>
+    <!-- Nuevo iframe adicional debajo de los gráficos -->
+    <div class="additional-container">
+      <iframe width="634" height="350" frameborder="0" scrolling="no" 
+        src="https://hinscba-my.sharepoint.com/personal/jslythe_hins_com_ar/_layouts/15/Doc.aspx?sourcedoc={fbd36574-fa38-4b92-874d-9a6f1f8c3934}&action=embedview&wdAllowInteractivity=False&Item='Hoja1'!A7%3AE22&wdHideGridlines=True&wdDownloadButton=True&wdInConfigurator=True&wdInConfigurator=True">
+      </iframe>
+    </div>
   </div>
   <footer>
     Prototipo creado con fines ilustrativos
   </footer>
 </body>
 </html>
+
